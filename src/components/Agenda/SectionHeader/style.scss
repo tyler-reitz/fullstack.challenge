@@ -1,0 +1,16 @@
+@import "lib/style";
+
+.outer {
+  display: flex;
+  flex: 1 1;
+  flex-direction: row;
+  align-items: flex-end;
+
+  box-sizing: border-box;
+  min-height: 56px;
+  padding: 0 0 10px 0;
+  margin: 0 16px;
+
+  border-bottom: 1px solid rgba($grayColor, 0.2);
+  @include title-text;
+}

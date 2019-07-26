@@ -1,0 +1,47 @@
+@import "lib/style";
+
+.outer {
+  display: flex;
+  flex-direction: row;
+
+  box-sizing: border-box;
+  min-height: 40px;
+  padding: 4px 16px;
+}
+
+.when {
+  padding-right: 8px;
+  width: 64px;
+  text-align: right;
+  color: $darkGrayColor;
+  @include caption-medium-text;
+  padding-top: 9px;
+}
+
+.card {
+  position: relative;
+  border-radius: 8px;
+  padding: 0 7px;
+  z-index: 10;
+  background: $lightGrayColor;
+  overflow: hidden;
+
+  flex: 1 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardTitle {
+  @include body-medium-text;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  overflow: hidden;
+  padding: 6px 0;
+
+  flex: 1 1;
+  display: flex;
+  justify-content: space-between;
+}
