@@ -68,12 +68,6 @@ The requirements for this feature are:
 3. In each group, events will be sorted by ascending date-time
 
 
-### Bonus
-
-Feel free to refactor/re-organize some parts of the code as you see fit.
-If you do, please list what you changed and why.
-
-
 ### Questions
 
 Please add your answers to the questions below:
