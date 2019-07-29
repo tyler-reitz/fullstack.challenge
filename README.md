@@ -13,7 +13,6 @@
   - run `npm i`
   - run `npm start`
   - open `http://localhost:8080/`
-- When completed, submit a pull request and we will be in touch soon! Feel free to email jobs@withdouble.com if you have any questions
 - If needed, here are the documentation links of: [React](https://reactjs.org/), [Mobx](https://mobx.js.org/index.html) and [Luxon](https://moment.github.io/luxon/index.html)
 
 
@@ -27,9 +26,7 @@
 
 ### Submitting your results
 
-Send your completed test to your contact at Double or jobs@withdouble.com directly
-
-You can share your Github project link or zip your directory and attach it to your email. If you do not use Github, don't forget to attach your `.git` folder.
+Send your completed test to your contact at Double or jobs@withdouble.com directly, attaching a zip of your directory (don't forget to include your `.git` folder).
 
 
 
@@ -48,7 +45,7 @@ Identify the source of this behavior and fix it.
 
 ### Level 2: Filter agenda events by calendar
 
-To help our users see at a glance what is happening in their day, we want to add a filtering mechanism on agenda events. The requirements for this feature are:
+We want to add a filtering mechanism on agenda events. The requirements for this feature are:
 
 1. Add a select menu that will filter events by `calendar`
 2. When a calendar is selected, only events from that calendar are displayed
@@ -63,7 +60,7 @@ Another enhancement would be to show all calendar events in one page, grouping t
 
 The requirements for this feature are:
 
-1. Add a button to toggle groups by department
+1. Add a button to toggle groups by `department`
 2. When enabled, events will be grouped and each group will be clearly identified
 3. In each group, events will be sorted by ascending date-time
 
