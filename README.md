@@ -18,7 +18,7 @@
 
 ### Pointers
 
-- Keep in mind you are working on an existing code-base.
+- Keep in mind that you are working on an existing code-base.
 - Code should be clean, extensible and robust. Don't overlook edge cases.
 - You will have to create some basic UI. While we're not expecting you to be a skilled designer, it should come close to the look and feel of the app. We *are* looking for engineers with some product-sense.
 - We like [emojis](https://gitmoji.carloscuesta.me/) :wink:
