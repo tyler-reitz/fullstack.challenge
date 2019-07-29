@@ -27,9 +27,9 @@
 
 ### Submitting your results
 
-Send your completed test to your contact at Double.
+Send your completed test to your contact at Double or jobs@withdouble.com directly
 
-You can send your Github project link or zip your directory and send it via email. If you do not use Github, don't forget to attach your `.git` folder.
+You can share your Github project link or zip your directory and attach it to your email. If you do not use Github, don't forget to attach your `.git` folder.
 
 
 
@@ -40,9 +40,9 @@ Let's do this! :muscle:
 
 **Double helps executives and their assistants work better together**. Managing agendas is an important part of an assistant's job, and we're inviting you to join our mission of making assistants's lives easier.
 
-### Level 1: Fix title update bug
+### Level 1: Agenda's title bug fix
 
-One of our users just submitted a bug report: the agenda's title ("Good morning", "Good afternoon", "Good evening", "Good night") does not always update as the day goes by.
+One of our users just submitted a bug report: the agenda's title ("Good morning", "Good afternoon", etc.) does not always update as the day goes by.
 Identify the source of this behavior and fix it.
 
 
@@ -57,7 +57,7 @@ To help our users see at a glance what is happening in their day, we want to add
 
 ### Level 3: Group agenda events by department
 
-A further enhancement would be to show all calendar events in one page, grouping them by department. Here is a quick mock-up of what the feature could look like:
+Another enhancement would be to show all calendar events in one page, grouping them by `department`. Here is a quick mock-up of what the feature could look like:
 
 <img src="https://user-images.githubusercontent.com/45558407/61964225-5f967b80-af9b-11e9-9e39-b201a5644bf9.png" width="300" />
 
