@@ -5,7 +5,6 @@
 ## Instructions
 
 - To complete this challenge, you will need `npm`, `node` and `git` installed locally
-- Clone this repository (do *not* fork it)
 - Solve each level in order
 - Include the `.git` directory when submitting your solution
 - Don't spend more than **4 hours** on this test
@@ -26,7 +25,11 @@
 
 ### Submitting your results
 
-Send your completed test to your contact at Double or jobs@withdouble.com directly, attaching a zip of your directory (don't forget to include your `.git` folder).
+2 possibilities: 
+1. Fork this repository and send us a Pull Request
+2. Clone this repository and share your repo with @pierre-elie and @quentinsl
+
+In both cases, we will review your code within 3 days and will be in touch via email
 
 
 
@@ -71,4 +74,5 @@ Please add your answers to the questions below:
 
 1. How long did you spend on this challenge?
 2. In your opinion, what are features that Double could work on that would be helpful for assistants when managing agendas?
-3. Do you have any constructive feedback that you would like to share with our team?
+3. If you had more time, what would you add or change in the codebase? 
+4. Do you have any constructive feedback that you would like to share with our team?
