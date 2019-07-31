@@ -76,3 +76,4 @@ Please add your answers to the questions below:
 2. In your opinion, what are features that Double could work on that would be helpful for assistants when managing agendas?
 3. If you had more time, what would you add or change in the codebase? 
 4. Do you have any constructive feedback that you would like to share with our team?
+
