@@ -27,7 +27,7 @@
 
 2 possibilities: 
 1. Fork this repository and send us a Pull Request
-2. Clone this repository and share your repo with @pierre-elie and @quentinsl
+2. Clone this repository and share yours with [@pierre-elie](https://github.com/pierre-elie) and [@quentinsl](https://github.com/quentinsl)
 
 In both cases, we will review your code within 3 days and will be in touch via email
 
