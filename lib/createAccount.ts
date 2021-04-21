@@ -1,5 +1,3 @@
-// @flow
-
 import { DateTime } from 'luxon'
 import faker from 'faker'
 import shuffle from 'lodash/fp/shuffle'
@@ -70,14 +68,14 @@ const generateCalendar = (color: string): Calendar => {
  */
 
 const createAccount = (): Account => {
-  const account = new Account()
   const colorPool = shuffle(CALENDAR_COLORS)
 
+  const calendars = []
   for (let i = 0; i < CALENDARS_PER_ACCOUNT; i++) {
-    account.calendars.push(generateCalendar(colorPool.pop()))
+    calendars.push(generateCalendar(colorPool.pop()))
   }
 
-  return account
+  return { calendars }
 }
 
 export default createAccount

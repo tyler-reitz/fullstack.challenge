@@ -1,12 +1,10 @@
-// @flow
-
 import faker from 'faker'
 import capitalize from 'lodash/capitalize'
 
 import flipACoin from 'lib/flipACoin'
 import pickRandomOne from 'lib/pickRandomOne'
 
-import type Account from 'src/models/Account'
+import Account from 'src/models/Account'
 
 /**
  * Change title or date-time of one random event

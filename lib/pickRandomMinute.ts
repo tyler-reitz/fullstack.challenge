@@ -1,5 +1,3 @@
-// @flow
-
 import pickRandomOne from './pickRandomOne'
 
 const pickRandomMinute = (): number => (

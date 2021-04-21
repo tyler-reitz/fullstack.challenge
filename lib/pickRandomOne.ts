@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * Return an array element, picked randomly
  */

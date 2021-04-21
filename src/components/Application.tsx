@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from 'react'
 import { Provider, disposeOnUnmount } from 'mobx-react'
 

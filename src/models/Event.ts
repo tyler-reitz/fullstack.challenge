@@ -1,19 +1,17 @@
-// @flow
-
 import { DateTime } from 'luxon'
-import uuid from 'uuid/v4'
-import { observable } from 'mobx'
+import { v4 as uuid } from 'uuid'
+// import { observable } from 'mobx'
 
 class Event {
   id: string = uuid()
 
-  @observable
+  // @observable
   title: string
 
-  @observable
+  // @observable
   department: string | void
 
-  @observable
+  // @observable
   date: DateTime
 }
 

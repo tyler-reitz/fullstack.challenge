@@ -2,7 +2,7 @@ const { join, resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: resolve(__dirname, 'src/index.js'),
+  entry: resolve(__dirname, 'src/index.tsx'),
   output: {
     path: join(__dirname, 'dist'),
     filename: 'index.js',
@@ -10,7 +10,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -32,7 +32,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.sass', '.scss'],
+    extensions: ['.js', '.jsx', '.sass', '.scss', '.ts', '.tsx'],
     alias: {
       src: resolve(__dirname, 'src'),
       lib: resolve(__dirname, 'lib'),

@@ -1,19 +1,19 @@
-// @flow
-
 import React from 'react'
 
-import style from './style'
+import style from './style.scss'
 
 /**
  * Agenda section header component
  */
 
-type tProps = {
+interface Props {
   label: string,
 }
 
-export default ({ label }: tProps) => (
+const SectionHeader = ({ label }: Props) => (
   <div className={style.outer}>
     {label}
   </div>
 )
+
+export default SectionHeader
