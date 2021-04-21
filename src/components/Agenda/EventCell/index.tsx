@@ -1,7 +1,6 @@
 import React from 'react'
 import { DateTime } from 'luxon'
 import Color from 'color'
-import { observer } from 'mobx-react'
 
 import Event from 'src/models/Event'
 import Calendar from 'src/models/Calendar'
@@ -45,4 +44,4 @@ const EventCell = (({ calendar, event }: Props) => {
   )
 })
 
-export default observer(EventCell)
+export default EventCell

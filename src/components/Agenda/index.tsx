@@ -1,18 +1,23 @@
-import React, { Component, useMemo } from 'react'
+import React, { Component, useContext, useMemo } from 'react'
 import { DateTime } from 'luxon'
-import { computed } from 'mobx'
-import { observer, inject } from 'mobx-react'
 
 import greeting from 'lib/greeting'
 
-import Account from 'src/models/Account'
 import Calendar from 'src/models/Calendar'
 import Event from 'src/models/Event'
+import AccountContext from 'src/context/accountContext'
 
 import List from './List'
 import EventCell from './EventCell'
 
 import style from './style.scss'
+
+type AgendaItem = {
+  calendar: Calendar,
+  event: Event
+}
+
+const compareByDateTime = (a: AgendaItem, b: AgendaItem) => (a.event.date.diff(b.event.date).valueOf())
 
 /**
  * Agenda component
@@ -20,29 +25,22 @@ import style from './style.scss'
  * and list of calendar events
  */
 
-type AgendaItem = {
-  calendar: Calendar,
-  event: Event
-}
+const Agenda = () => {
+  const account = useContext(AccountContext )
 
-interface Props {
-  account: Account
-}
-
-const Agenda = ({ account }: Props) => {
-  const events: Array<AgendaItem> = useMemo(() => {
-    const events = account.calendars
+  const events: AgendaItem[] = useMemo(() => (
+    account.calendars
       .flatMap((calendar) => (
         calendar.events.map((event) => (
           { calendar, event }
         ))
       ))
+      .sort(compareByDateTime)
+  ), [account])
 
-    // Sort events by date-time, ascending
-    events.sort((a, b) => (a.event.date.diff(b.event.date).valueOf()))
-
-    return events
-  }, [account])
+  const title = useMemo(() => (
+    greeting(DateTime.local().hour)
+  ), [])
 
   return (
     <div className={style.outer}>
@@ -50,7 +48,7 @@ const Agenda = ({ account }: Props) => {
 
         <div className={style.header}>
           <span className={style.title}>
-            {greeting(DateTime.local().hour)}
+            {title}
           </span>
         </div>
 

@@ -12,7 +12,7 @@
   - run `npm i`
   - run `npm start`
   - open `http://localhost:8080/`
-- If needed, here are the documentation links of: [React](https://reactjs.org/), [Mobx](https://mobx.js.org/index.html) and [Luxon](https://moment.github.io/luxon/index.html)
+- If needed, here are the documentation links of: [React](https://reactjs.org/) and [Luxon](https://moment.github.io/luxon/index.html)
 
 
 ### Pointers

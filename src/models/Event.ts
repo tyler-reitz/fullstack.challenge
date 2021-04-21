@@ -1,17 +1,9 @@
 import { DateTime } from 'luxon'
-import { v4 as uuid } from 'uuid'
-// import { observable } from 'mobx'
 
-class Event {
-  id: string = uuid()
-
-  // @observable
+type Event = {
+  id: string
   title: string
-
-  // @observable
-  department: string | void
-
-  // @observable
+  department: string | null
   date: DateTime
 }
 

@@ -1,38 +1,39 @@
-import React, { Component } from 'react'
-import { Provider, disposeOnUnmount } from 'mobx-react'
+import React, { useEffect, useState } from 'react'
 
-import updateAccount from 'lib/updateAccount'
+import getUpdatedAccount from 'lib/getUpdatedAccount'
 import createAccount from 'lib/createAccount'
 import runEvery from 'lib/runEvery'
+import Account from 'src/models/Account'
+import AccountContext from 'src/context/accountContext'
 
 import Agenda from './Agenda'
 
-const REAL_TIME_UPDATES_INTERVAL = 10000
+const REAL_TIME_UPDATES_INTERVAL = 1000
 
-class Application extends Component {
-  // Initialize an Account populated with random values
-  account = createAccount()
+const initialAccountValue = createAccount()
+
+const Application = () => {
+  const [account, setAccount] = useState<Account>(initialAccountValue)
 
   // Simulate real-time updates by updating random events properties
   // at pre-defined intervals
-  cancelRealTimeUpdates = disposeOnUnmount(this,
+  useEffect(() => (
     runEvery(REAL_TIME_UPDATES_INTERVAL, () => {
       try {
-        updateAccount(this.account)
+        const updatedAccount = getUpdatedAccount(account)
+        setAccount(updatedAccount)
       }
       catch (e) {
         console.error(e)
       }
-    }),
-  )
+    })
+  ), [account])
 
-  render () {
-    return (
-      <Provider account={this.account}>
-        <Agenda />
-      </Provider>
-    )
-  }
+  return (
+    <AccountContext.Provider value={account}>
+      <Agenda />
+    </AccountContext.Provider>
+  )
 }
 
 export default Application
