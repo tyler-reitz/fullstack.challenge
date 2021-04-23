@@ -13,21 +13,21 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: 'ts-loader',
         },
       },
       {
         test: /\.s(a|c)ss$/,
-        loader: [
-          'style-loader',
+        use: [
+          { loader: 'style-loader' },
           {
             loader: 'css-loader',
             options: {
               modules: true,
             },
           },
-          'sass-loader',
-        ],
+          { loader: 'sass-loader' }
+        ]
       },
     ],
   },

@@ -6,7 +6,7 @@
     "preserveConstEnums": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "baseUrl": ".",
     "target": "es5",
     "lib": [
