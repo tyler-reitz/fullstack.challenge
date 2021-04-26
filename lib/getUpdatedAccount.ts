@@ -7,6 +7,7 @@ import getRandomIndex from 'lib/getRandomIndex'
 import Account from 'src/models/Account'
 import Event from 'src/models/Event'
 import Calendar from 'src/models/Calendar'
+import wait from './wait'
 
 const getUpdatedEvent = (calendarEvent: Event): Event => {
   if (flipACoin()) {
@@ -37,8 +38,9 @@ const getUpdatedCalendar = (calendar: Calendar): Calendar => {
  * from a random calendar of the passed account
  */
 
-const getUpdatedAccount = (account: Account): Account => {
+const getUpdatedAccount = async (account: Account): Promise<Account> => {
   const randomCalendarIndex = getRandomIndex(account.calendars)
+  await wait(200) // Mock a 200ms delay
 
   return ({
     calendars: account.calendars.map((calendar, index) => (

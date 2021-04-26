@@ -18,9 +18,9 @@ const Application = () => {
   // Simulate real-time updates by updating random events properties
   // at pre-defined intervals
   useEffect(() => (
-    runEvery(REAL_TIME_UPDATES_INTERVAL, () => {
+    runEvery(REAL_TIME_UPDATES_INTERVAL, async () => {
       try {
-        const updatedAccount = getUpdatedAccount(account)
+        const updatedAccount = await getUpdatedAccount(account)
         setAccount(updatedAccount)
       }
       catch (e) {
