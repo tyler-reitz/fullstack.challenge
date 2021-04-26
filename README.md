@@ -45,8 +45,11 @@ Let's do this! :muscle:
 One of our users just submitted a bug report: the agenda's title ("Good morning", "Good afternoon", etc.) does not always update as the day goes by.
 Identify the source of this behavior and fix it.
 
+### Level 2: Handle errors
 
-### Level 2: Filter agenda events by calendar
+It seems that, occasionally, an uncatched error happens when the account is refreshed. Make sure the error is caught and that the user is aware that the refresh failed.
+
+### Level 3: Filter agenda events by calendar
 
 We want to add a filtering mechanism on agenda events. The requirements for this feature are:
 
@@ -55,7 +58,7 @@ We want to add a filtering mechanism on agenda events. The requirements for this
 3. By default `all` calendars are displayed
 
 
-### Level 3: Group agenda events by department
+### Level 4: Group agenda events by department
 
 Another enhancement would be to show all calendar events in one page, grouping them by `department`. Here is a quick mock-up of what the feature could look like:
 
