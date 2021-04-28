@@ -1,14 +1,11 @@
-// @flow
-
 import React from 'react'
 import { DateTime } from 'luxon'
 import Color from 'color'
-import { observer } from 'mobx-react'
 
-import type Event from 'src/models/Event'
-import type Calendar from 'src/models/Calendar'
+import Event from 'src/models/Event'
+import Calendar from 'src/models/Calendar'
 
-import style from './style'
+import style from './style.scss'
 
 /**
  * Format a date-time to time only string
@@ -23,12 +20,12 @@ const formatWhen = (dt: DateTime) => (
  * Displays time of event, title and department (if any)
  */
 
-type tProps = {
+interface Props {
   calendar: Calendar,
   event: Event,
 }
 
-export default observer(({ calendar, event }: tProps) => {
+const EventCell = (({ calendar, event }: Props) => {
   const cardBgColor = Color(calendar.color).alpha(0.1).string()
   const titleColor = Color(calendar.color).alpha(0.8).mix(Color('#000'), 0.4).string()
 
@@ -46,3 +43,5 @@ export default observer(({ calendar, event }: tProps) => {
     </div>
   )
 })
+
+export default EventCell

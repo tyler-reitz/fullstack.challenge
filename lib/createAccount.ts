@@ -1,9 +1,8 @@
-// @flow
-
 import { DateTime } from 'luxon'
 import faker from 'faker'
 import shuffle from 'lodash/fp/shuffle'
 import capitalize from 'lodash/capitalize'
+import { v4 as uuid } from 'uuid'
 
 import Event from 'src/models/Event'
 import Account from 'src/models/Account'
@@ -32,20 +31,15 @@ const CALENDAR_COLORS = [
  * Date has a random minuteand an hour based on the passed offset from current time.
  */
 
-const generateEvent = (hourOffset: number): Event => {
-  const event = new Event()
-
-  event.title = capitalize(faker.company.bs())
-
-  // Don't assign a department to all events
-  event.department = flipACoin(0.8) ? faker.commerce.department() : undefined
-
-  event.date = DateTime.local()
+const generateEvent = (hourOffset: number): Event => ({
+  id: uuid(),
+  title: capitalize(faker.company.bs()),
+  date: DateTime.local()
     .plus({ hour: hourOffset })
-    .set({ minute: pickRandomMinute() })
-
-  return event
-}
+    .set({ minute: pickRandomMinute() }),
+  // Don't assign a department to all events
+  department: flipACoin(0.8) ? faker.commerce.department() : undefined
+})
 
 /**
  * Create a Calendar with a few Events.
@@ -53,15 +47,16 @@ const generateEvent = (hourOffset: number): Event => {
  */
 
 const generateCalendar = (color: string): Calendar => {
-  const calendar = new Calendar()
-
-  calendar.color = color
-
+  const events = []
   for (let i = 0; i < EVENTS_PER_CALENDAR; i++) {
-    calendar.events.push(generateEvent(Math.round(i - 5)))
+    events.push(generateEvent(Math.round(i - 5)))
   }
 
-  return calendar
+  return ({
+    id: uuid(),
+    color,
+    events
+  })
 }
 
 /**
@@ -70,14 +65,14 @@ const generateCalendar = (color: string): Calendar => {
  */
 
 const createAccount = (): Account => {
-  const account = new Account()
   const colorPool = shuffle(CALENDAR_COLORS)
 
+  const calendars = []
   for (let i = 0; i < CALENDARS_PER_ACCOUNT; i++) {
-    account.calendars.push(generateCalendar(colorPool.pop()))
+    calendars.push(generateCalendar(colorPool.pop()))
   }
 
-  return account
+  return ({ calendars })
 }
 
 export default createAccount

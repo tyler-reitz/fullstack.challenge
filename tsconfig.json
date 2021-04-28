@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es2019"
+    ]
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * Greeting string depending on the time of day.
  */

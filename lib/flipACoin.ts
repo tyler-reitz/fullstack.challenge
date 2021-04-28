@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * Return true or false randomly.
  */
