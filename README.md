@@ -14,27 +14,23 @@
   - open `http://localhost:8080/`
 - If needed, here are the documentation links of: [React](https://reactjs.org/) and [Luxon](https://moment.github.io/luxon/index.html)
 
-
 ### Pointers
 
 - Keep in mind that you are working on an existing code-base.
 - Code should be clean, extensible and robust. Don't overlook edge cases.
-- You will have to create some basic UI. While we're not expecting you to be a skilled designer, it should come close to the look and feel of the app. We *are* looking for engineers with some product-sense.
+- You will have to create some basic UI. While we're not expecting you to be a skilled designer, it should come close to the look and feel of the app. We _are_ looking for engineers with some product-sense.
 - We like [emojis](https://gitmoji.carloscuesta.me/) :wink:
-
 
 ### Submitting your results
 
-2 possibilities: 
+2 possibilities:
+
 1. Fork this repository and send us a Pull Request
-2. Clone this repository and share yours with [@pierre-elie](https://github.com/pierre-elie) and [@quentinsl](https://github.com/quentinsl)
+2. Clone this repository and share yours with [@pierre-elie](https://github.com/pierre-elie), [@augustinr](https://github.com/augustinr) and [@flobories](https://github.com/flobories)
 
 In both cases, we will review your code within 3 days and will be in touch via email
 
-
-
 Let's do this! :muscle:
-
 
 ## Challenge
 
@@ -57,7 +53,6 @@ We want to add a filtering mechanism on agenda events. The requirements for this
 2. When a calendar is selected, only events from that calendar are displayed
 3. By default `all` calendars are displayed
 
-
 ### Level 4: Group agenda events by department
 
 Another enhancement would be to show all calendar events in one page, grouping them by `department`. Here is a quick mock-up of what the feature could look like:
@@ -70,13 +65,11 @@ The requirements for this feature are:
 2. When enabled, events will be grouped and each group will be clearly identified
 3. In each group, events will be sorted by ascending date-time
 
-
 ### Questions
 
 Please add your answers to the questions below:
 
 1. How long did you spend on this challenge?
 2. In your opinion, what are features that Double could work on that would be helpful for assistants when managing agendas?
-3. If you had more time, what would you add or change in the codebase? 
+3. If you had more time, what would you add or change in the codebase?
 4. Do you have any constructive feedback that you would like to share with our team?
-
