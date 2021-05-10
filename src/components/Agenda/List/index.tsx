@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import style from './style.scss'
 
@@ -10,7 +10,7 @@ interface Props {
   children?: React.ReactNode
 }
 
-const List = ({ children }: Props) => (
+const List = ({ children }: Props): ReactElement => (
   <div className={style.outer}>{children}</div>
 )
 

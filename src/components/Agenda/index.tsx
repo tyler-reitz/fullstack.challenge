@@ -1,4 +1,4 @@
-import React, { Component, useContext, useMemo } from 'react'
+import React, { ReactElement, useContext, useMemo } from 'react'
 import { DateTime } from 'luxon'
 
 import greeting from 'lib/greeting'
@@ -26,7 +26,7 @@ const compareByDateTime = (a: AgendaItem, b: AgendaItem) =>
  * and list of calendar events
  */
 
-const Agenda = () => {
+const Agenda = (): ReactElement => {
   const account = useContext(AccountContext)
 
   const events: AgendaItem[] = useMemo(

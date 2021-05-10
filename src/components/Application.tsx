@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { ReactElement, useEffect } from 'react'
 
 import runEvery from 'lib/runEvery'
 import useAccount from 'lib/useAccount'
@@ -8,7 +8,7 @@ import Agenda from './Agenda'
 
 const REAL_TIME_UPDATES_INTERVAL = 10000
 
-const Application = () => {
+const Application = (): ReactElement => {
   const [account, refreshAccount] = useAccount()
 
   useEffect(

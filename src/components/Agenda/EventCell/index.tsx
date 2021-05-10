@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { DateTime } from 'luxon'
 import Color from 'color'
 
@@ -23,7 +23,7 @@ interface Props {
   event: Event
 }
 
-const EventCell = ({ calendar, event }: Props) => {
+const EventCell = ({ calendar, event }: Props): ReactElement => {
   const cardBgColor = Color(calendar.color).alpha(0.1).string()
   const titleColor = Color(calendar.color)
     .alpha(0.8)

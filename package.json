@@ -4,6 +4,7 @@
   "description": "Live Briefing - Challenge",
   "main": "src/index.js",
   "scripts": {
+    "eslint": "eslint \"./lib/**/*.ts\" \"./src/**/*.ts\" \"./src/**/*.tsx\"",
     "format": "prettier --write .",
     "start": "webpack-dev-server --config ./webpack.config.js --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,10 +22,15 @@
     "@types/luxon": "^1.26.4",
     "@types/react-dom": "^17.0.3",
     "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
     "@withdouble/eslint-config": "^1.2.7",
     "color": "^3.1.2",
     "css-loader": "^3.1.0",
     "eslint": "^6.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "faker": "^4.1.0",
     "html-webpack-plugin": "^5.3.1",
     "lodash": "^4.17.15",
