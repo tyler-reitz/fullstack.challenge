@@ -28,7 +28,7 @@ const CALENDAR_COLORS = [
 /**
  * Create an Event.
  * Title and department are set to random values.
- * Date has a random minuteand an hour based on the passed offset from current time.
+ * Date has a random minute and an hour based on the passed offset from current time.
  */
 
 const generateEvent = (hourOffset: number): Event => ({
