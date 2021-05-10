@@ -11,9 +11,10 @@ const REAL_TIME_UPDATES_INTERVAL = 10000
 const Application = () => {
   const [account, refreshAccount] = useAccount()
 
-  useEffect(() => (
-    runEvery(REAL_TIME_UPDATES_INTERVAL, refreshAccount)
-  ), [refreshAccount])
+  useEffect(
+    () => runEvery(REAL_TIME_UPDATES_INTERVAL, refreshAccount),
+    [refreshAccount],
+  )
 
   return (
     <AccountContext.Provider value={account}>

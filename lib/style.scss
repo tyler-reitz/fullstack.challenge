@@ -1,7 +1,9 @@
 // TEXTS
 
 @mixin basic-text {
-  font-family: "SF Pro Text", system, -apple-system, BlinkMacSystemFont, ".SFNSDisplay-Regular", "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'SF Pro Text', system, -apple-system, BlinkMacSystemFont,
+    '.SFNSDisplay-Regular', 'Segoe UI', SegoeUI, 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
 }
 
 @mixin title-text {
@@ -28,10 +30,9 @@
   font-weight: 500;
 }
 
-
 // COLORS
 
-$blackColor: #2E3247;
+$blackColor: #2e3247;
 $grayColor: #c0c4cf;
-$darkGrayColor: #9393A3;
+$darkGrayColor: #9393a3;
 $lightGrayColor: #f9f9fa;

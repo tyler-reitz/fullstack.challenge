@@ -9,10 +9,7 @@
     "jsx": "react",
     "baseUrl": ".",
     "target": "es5",
-    "lib": [
-      "dom",
-      "es2019"
-    ]
+    "lib": ["dom", "es2019"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

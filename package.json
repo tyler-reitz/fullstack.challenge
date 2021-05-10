@@ -4,7 +4,7 @@
   "description": "Live Briefing - Challenge",
   "main": "src/index.js",
   "scripts": {
-    "eslint": "eslint \"./lib/**/*.js\" \"./src/**/*.js\"",
+    "format": "prettier --write .",
     "start": "webpack-dev-server --config ./webpack.config.js --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +30,7 @@
     "lodash": "^4.17.15",
     "luxon": "^1.17.1",
     "node-sass": "^4.12.0",
+    "prettier": "2.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sass-loader": "^7.1.0",

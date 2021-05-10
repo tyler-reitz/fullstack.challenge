@@ -1,11 +1,9 @@
-import getRandomIndex from "./getRandomIndex"
+import getRandomIndex from './getRandomIndex'
 
 /**
  * Return an array element, picked randomly
  */
 
-const pickRandomOne = <T>(arr: T[]): T => (
-  arr[getRandomIndex(arr)]
-)
+const pickRandomOne = <T>(arr: T[]): T => arr[getRandomIndex(arr)]
 
 export default pickRandomOne

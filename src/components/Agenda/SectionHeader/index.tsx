@@ -7,13 +7,11 @@ import style from './style.scss'
  */
 
 interface Props {
-  label: string,
+  label: string
 }
 
 const SectionHeader = ({ label }: Props) => (
-  <div className={style.outer}>
-    {label}
-  </div>
+  <div className={style.outer}>{label}</div>
 )
 
 export default SectionHeader
