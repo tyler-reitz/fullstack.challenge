@@ -28,7 +28,7 @@ const CALENDAR_COLORS = [
 /**
  * Create an Event.
  * Title and department are set to random values.
- * Date has a random minuteand an hour based on the passed offset from current time.
+ * Date has a random minute and an hour based on the passed offset from current time.
  */
 
 const generateEvent = (hourOffset: number): Event => ({
@@ -38,7 +38,7 @@ const generateEvent = (hourOffset: number): Event => ({
     .plus({ hour: hourOffset })
     .set({ minute: pickRandomMinute() }),
   // Don't assign a department to all events
-  department: flipACoin(0.8) ? faker.commerce.department() : undefined
+  department: flipACoin(0.8) ? faker.commerce.department() : undefined,
 })
 
 /**
@@ -52,11 +52,11 @@ const generateCalendar = (color: string): Calendar => {
     events.push(generateEvent(Math.round(i - 5)))
   }
 
-  return ({
+  return {
     id: uuid(),
     color,
-    events
-  })
+    events,
+  }
 }
 
 /**
@@ -72,7 +72,7 @@ const createAccount = (): Account => {
     calendars.push(generateCalendar(colorPool.pop()))
   }
 
-  return ({ calendars })
+  return { calendars }
 }
 
 export default createAccount

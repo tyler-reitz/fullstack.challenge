@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import style from './style.scss'
 
@@ -7,13 +7,11 @@ import style from './style.scss'
  */
 
 interface Props {
-  label: string,
+  label: string
 }
 
-const SectionHeader = ({ label }: Props) => (
-  <div className={style.outer}>
-    {label}
-  </div>
+const SectionHeader = ({ label }: Props): ReactElement => (
+  <div className={style.outer}>{label}</div>
 )
 
 export default SectionHeader

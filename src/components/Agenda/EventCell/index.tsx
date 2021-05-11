@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { DateTime } from 'luxon'
 import Color from 'color'
 
@@ -11,9 +11,7 @@ import style from './style.scss'
  * Format a date-time to time only string
  */
 
-const formatWhen = (dt: DateTime) => (
-  dt.toFormat(dt.minute ? 'h:mm a' : 'h a')
-)
+const formatWhen = (dt: DateTime) => dt.toFormat(dt.minute ? 'h:mm a' : 'h a')
 
 /**
  * Event cell component
@@ -21,19 +19,20 @@ const formatWhen = (dt: DateTime) => (
  */
 
 interface Props {
-  calendar: Calendar,
-  event: Event,
+  calendar: Calendar
+  event: Event
 }
 
-const EventCell = (({ calendar, event }: Props) => {
+const EventCell = ({ calendar, event }: Props): ReactElement => {
   const cardBgColor = Color(calendar.color).alpha(0.1).string()
-  const titleColor = Color(calendar.color).alpha(0.8).mix(Color('#000'), 0.4).string()
+  const titleColor = Color(calendar.color)
+    .alpha(0.8)
+    .mix(Color('#000'), 0.4)
+    .string()
 
   return (
     <div className={style.outer}>
-      <div className={style.when}>
-        {formatWhen(event.date)}
-      </div>
+      <div className={style.when}>{formatWhen(event.date)}</div>
       <div className={style.card} style={{ backgroundColor: cardBgColor }}>
         <div className={style.cardTitle} style={{ color: titleColor }}>
           <span>{event.title}</span>
@@ -42,6 +41,6 @@ const EventCell = (({ calendar, event }: Props) => {
       </div>
     </div>
   )
-})
+}
 
 export default EventCell

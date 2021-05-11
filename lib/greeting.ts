@@ -5,17 +5,13 @@
 const greeting = (hour: number): string => {
   if (hour < 6) {
     return 'Good night'
-  }
-  else if (hour < 12) {
+  } else if (hour < 12) {
     return 'Good morning'
-  }
-  else if (hour < 18) {
+  } else if (hour < 18) {
     return 'Good afternoon'
-  }
-  else if (hour < 22) {
+  } else if (hour < 22) {
     return 'Good evening'
-  }
-  else {
+  } else {
     return 'Good night'
   }
 }

@@ -1,10 +1,9 @@
-const wait = async (delay: number) => (
+const wait = async (delay: number): Promise<void> =>
   new Promise((res) => {
-    let timeout = setTimeout(() => {
+    const timeout = setTimeout(() => {
       clearTimeout(timeout)
       res(null)
     }, delay)
   })
-)
 
 export default wait

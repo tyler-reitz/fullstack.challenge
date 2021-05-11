@@ -12,8 +12,7 @@ import wait from './wait'
 const getUpdatedEvent = (calendarEvent: Event): Event => {
   if (flipACoin()) {
     calendarEvent.title = capitalize(faker.company.bs())
-  }
-  else {
+  } else {
     calendarEvent.date = calendarEvent.date.plus({
       hour: flipACoin() ? -1 : 1,
     })
@@ -25,12 +24,14 @@ const getUpdatedEvent = (calendarEvent: Event): Event => {
 const getUpdatedCalendar = (calendar: Calendar): Calendar => {
   const randomEventIndex = getRandomIndex(calendar.events)
 
-  return ({
+  return {
     ...calendar,
     events: calendar.events.map((calendarEvent, index) =>
-      index !== randomEventIndex ? calendarEvent : getUpdatedEvent(calendarEvent)
-    )
-  })
+      index !== randomEventIndex
+        ? calendarEvent
+        : getUpdatedEvent(calendarEvent),
+    ),
+  }
 }
 
 /**
@@ -50,13 +51,11 @@ const getUpdatedAccount = async (account: Account): Promise<Account> => {
     throw new Error('Unexpected error')
   }
 
-  return ({
-    calendars: account.calendars.map((calendar, index) => (
-      index !== randomCalendarIndex
-        ? calendar
-        : getUpdatedCalendar(calendar)
-    ))
-  })
+  return {
+    calendars: account.calendars.map((calendar, index) =>
+      index !== randomCalendarIndex ? calendar : getUpdatedCalendar(calendar),
+    ),
+  }
 }
 
 export default getUpdatedAccount

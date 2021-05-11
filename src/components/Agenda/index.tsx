@@ -1,4 +1,4 @@
-import React, { Component, useContext, useMemo } from 'react'
+import React, { ReactElement, useContext, useMemo } from 'react'
 import { DateTime } from 'luxon'
 
 import greeting from 'lib/greeting'
@@ -13,11 +13,12 @@ import EventCell from './EventCell'
 import style from './style.scss'
 
 type AgendaItem = {
-  calendar: Calendar,
+  calendar: Calendar
   event: Event
 }
 
-const compareByDateTime = (a: AgendaItem, b: AgendaItem) => (a.event.date.diff(b.event.date).valueOf())
+const compareByDateTime = (a: AgendaItem, b: AgendaItem) =>
+  a.event.date.diff(b.event.date).valueOf()
 
 /**
  * Agenda component
@@ -25,31 +26,26 @@ const compareByDateTime = (a: AgendaItem, b: AgendaItem) => (a.event.date.diff(b
  * and list of calendar events
  */
 
-const Agenda = () => {
-  const account = useContext(AccountContext )
+const Agenda = (): ReactElement => {
+  const account = useContext(AccountContext)
 
-  const events: AgendaItem[] = useMemo(() => (
-    account.calendars
-      .flatMap((calendar) => (
-        calendar.events.map((event) => (
-          { calendar, event }
-        ))
-      ))
-      .sort(compareByDateTime)
-  ), [account])
+  const events: AgendaItem[] = useMemo(
+    () =>
+      account.calendars
+        .flatMap((calendar) =>
+          calendar.events.map((event) => ({ calendar, event })),
+        )
+        .sort(compareByDateTime),
+    [account],
+  )
 
-  const title = useMemo(() => (
-    greeting(DateTime.local().hour)
-  ), [])
+  const title = useMemo(() => greeting(DateTime.local().hour), [])
 
   return (
     <div className={style.outer}>
       <div className={style.container}>
-
         <div className={style.header}>
-          <span className={style.title}>
-            {title}
-          </span>
+          <span className={style.title}>{title}</span>
         </div>
 
         <List>
@@ -57,7 +53,6 @@ const Agenda = () => {
             <EventCell key={event.id} calendar={calendar} event={event} />
           ))}
         </List>
-
       </div>
     </div>
   )
