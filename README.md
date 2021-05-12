@@ -23,10 +23,8 @@
 
 ### Submitting your results
 
-2 possibilities:
-
-1. Fork this repository and send us a Pull Request
-2. Clone this repository and share yours with [@pierre-elie](https://github.com/pierre-elie), [@augustinr](https://github.com/augustinr) and [@flobories](https://github.com/flobories)
+Clone this repository and share yours with [@pierre-elie](https://github.com/pierre-elie), [@augustinr](https://github.com/augustinr) and [@flobories](https://github.com/flobories)
+Open a PR with your changes to the source code.
 
 In both cases, we will review your code within 3 days and will be in touch via email
 
