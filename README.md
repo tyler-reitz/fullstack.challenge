@@ -23,10 +23,11 @@
 
 ### Submitting your results
 
-Clone this repository and share yours with [@pierre-elie](https://github.com/pierre-elie), [@augustinr](https://github.com/augustinr) and [@flobories](https://github.com/flobories)
-Open a PR with your changes to the source code.
+- Fork this repository 
+- Open a PR on your fork (please do not open a PR on this repo)
+- Share your forked repo with [@pierre-elie](https://github.com/pierre-elie), [@augustinr](https://github.com/augustinr) and [@flobories](https://github.com/flobories)
 
-In both cases, we will review your code within 3 days and will be in touch via email
+We will review your code within 3 days and will be in touch via email
 
 Let's do this! :muscle:
 
