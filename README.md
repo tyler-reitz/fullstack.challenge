@@ -23,7 +23,7 @@
 
 ### Submitting your results
 
-- Fork this repository 
+- Fork this repository
 - Open a PR on your fork (please do not open a PR on this repo)
 - Share your forked repo with [@pierre-elie](https://github.com/pierre-elie), [@augustinr](https://github.com/augustinr) and [@flobories](https://github.com/flobories)
 
