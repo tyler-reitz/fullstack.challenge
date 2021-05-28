@@ -1,7 +1,10 @@
-import React, { ReactElement, useContext, useMemo } from 'react'
+import React, { ReactElement, useContext, useMemo, useState } from 'react'
 import { DateTime } from 'luxon'
+import _sortBy from 'lodash/sortBy'
+import _groupBy from 'lodash/groupBy'
 
 import greeting from 'lib/greeting'
+import useGreeting from 'lib/useGreeting'
 
 import Calendar from 'src/models/Calendar'
 import Event from 'src/models/Event'
@@ -26,20 +29,42 @@ const compareByDateTime = (a: AgendaItem, b: AgendaItem) =>
  * and list of calendar events
  */
 
+const ALL = ''
+
 const Agenda = (): ReactElement => {
   const account = useContext(AccountContext)
+  const [id, setId] = useState(ALL)
+  const [group, setGroup] = useState(false)
+
+  const ids: string[] = useMemo(
+    () => [ALL, ...account.calendars.map(({ id }) => id)],
+    [account],
+  )
+
+  const filteredCalendars: Calendar[] = useMemo(
+    () =>
+      account.calendars.filter((calendar) =>
+        id ? calendar.id === id : calendar,
+      ),
+    [account, id],
+  )
 
   const events: AgendaItem[] = useMemo(
     () =>
-      account.calendars
+      filteredCalendars
         .flatMap((calendar) =>
           calendar.events.map((event) => ({ calendar, event })),
         )
         .sort(compareByDateTime),
-    [account],
+    [filteredCalendars],
   )
 
-  const title = useMemo(() => greeting(DateTime.local().hour), [])
+  const groupedEvents: { [key: string]: AgendaItem[] } = useMemo(
+    () => _groupBy(events, group && 'event.department'),
+    [events, group],
+  )
+
+  const title = useGreeting()
 
   return (
     <div className={style.outer}>
@@ -48,9 +73,33 @@ const Agenda = (): ReactElement => {
           <span className={style.title}>{title}</span>
         </div>
 
+        <label htmlFor="ids">calendars</label>
+        <select
+          name="ids"
+          id="ids"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        >
+          {ids.map((id) => (
+            <option key={id} value={id}>
+              {id || 'All'}
+            </option>
+          ))}
+        </select>
+
+        <button onClick={() => setGroup(!group)}>
+          {group ? 'Ungroup' : 'Group'}
+        </button>
+
         <List>
-          {events.map(({ calendar, event }) => (
-            <EventCell key={event.id} calendar={calendar} event={event} />
+          {Object.entries(groupedEvents).map(([heading, events]) => (
+            <div key={heading}>
+              {heading !== 'undefined' && <h2>{heading}</h2>}
+              <hr />
+              {events.map(({ calendar, event }) => (
+                <EventCell key={event.id} calendar={calendar} event={event} />
+              ))}
+            </div>
           ))}
         </List>
       </div>

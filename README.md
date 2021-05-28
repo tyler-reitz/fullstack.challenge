@@ -69,6 +69,18 @@ The requirements for this feature are:
 Please add your answers to the questions below:
 
 1. How long did you spend on this challenge?
+  Spent a few hours over the course of two days
 2. In your opinion, what are features that Double could work on that would be helpful for assistants when managing agendas?
+  Since there were only IDs to reference the calendars, I was unsure what each
+  referred to. Adding some clarifying info would be helpful.
 3. If you had more time, what would you add or change in the codebase?
+  I'd redo my implementation of the title update by moving it to it's own
+  component so the list isn't re-rendered each time it updates. I'd also try to
+  add an error boundary to deal with the intermittent account refresh error.
+  Other than that I'd look to find a way to keep the components focused on
+  rendering and look for ways to move most of the business logic out to their
+  own modules.
 4. Do you have any constructive feedback that you would like to share with our team?
+  No matter the time-limit on these take-home exercises I find that I spend
+  many more hours thinking about them than is asked. Which is why as a
+  candidate, I'm starting to prefer in-person technical challenges.
